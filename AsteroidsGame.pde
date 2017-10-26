@@ -1,6 +1,7 @@
 //your variable declarations here
 Spaceship ship = new Spaceship();
 Stars [] stars;
+boolean rockets = false;
 public void setup() 
 {
  	size(500,500);
@@ -33,6 +34,7 @@ public void keyPressed()
 	if(key == 's') //accelerate
 	{
 		ship.accelerate(1);
+		rockets = true;
 	}
 	if(key == 'h') //hyperspace
 	{
