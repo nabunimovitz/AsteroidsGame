@@ -20,6 +20,8 @@ class Spaceship extends Floater
   		myDirectionX = 0;
   		myDirectionY = 0;
   		myPointDirection = 0;
+
+  		rockets=false;
   	}
     public void setX(int x){myCenterX=x;}
     public int getX(){return (int)myCenterX;}
@@ -31,6 +33,12 @@ class Spaceship extends Floater
     public double getDirectionY(){return (double)myDirectionY;}
     public void setPointDirection(int degrees){myPointDirection=degrees;}   
   	public double getPointDirection(){return (double)myPointDirection;} 
+
+  	private boolean rockets;
+  	public void rockets()
+  	{
+  		rockets = !rockets;
+  	}
 
 	public void show ()  //Draws the floater at the current position  
   	{             
