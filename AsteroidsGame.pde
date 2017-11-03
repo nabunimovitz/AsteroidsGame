@@ -33,7 +33,7 @@ public void keyPressed()
 	if(key == 's') //accelerate
 	{
 		ship.accelerate(1);
-		ship.rockets();
+		ship.rocketsOn();
 	}
 	if(key == 'h') //hyperspace
 	{
@@ -48,7 +48,7 @@ public void keyReleased()
 {
 	if(key == 's')
 	{
-		ship.rockets();
+		ship.rocketsOn();
 	}
 }
 

@@ -35,7 +35,7 @@ class Spaceship extends Floater
   	public double getPointDirection(){return (double)myPointDirection;} 
 
   	private boolean rockets;
-  	public void rockets()
+  	public void rocketsOn()
   	{
   		rockets = !rockets;
   	}
