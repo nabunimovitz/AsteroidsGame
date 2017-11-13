@@ -1,7 +1,9 @@
 //your variable declarations here
 Spaceship ship = new Spaceship();
 Stars [] stars;
-Asteroid [] asteroids;
+//Asteroid [] asteroids;
+ArrayList <Asteroid> asteroids;
+
 
 public void setup() 
 {
@@ -12,10 +14,12 @@ public void setup()
  		stars[i] = new Stars();
  	}
 
- 	asteroids = new Asteroid[7];
- 	for(int i=0; i<asteroids.length; i++)
+ 	//asteroids = new Asteroid[8];
+ 	asteroids = new ArrayList<Asteroid>();
+ 	for(int nI=0; nI<8; nI++)
  	{
- 		asteroids[i] = new Asteroid();
+ 		Asteroid asteroidOne = new Asteroid();
+ 		asteroids.add(asteroidOne);
  	}
 }
 public void draw() 
@@ -29,10 +33,11 @@ public void draw()
   		stars[i].show();
   	}
 
-  	for(int i=0; i<asteroids.length; i++)
+  	for(int nI=0; nI<asteroids.size(); nI++)
   	{
-  		asteroids[i].show();
-  		asteroids[i].move();
+  		asteroids.get(nI).show();
+  		//if(dist(asteroids.getX(), asteroids.getY(), ship.getX(), ship.getY()) <20)
+  		asteroids.get(nI).move();
   	}
 }
 public void keyPressed()
