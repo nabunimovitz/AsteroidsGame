@@ -36,8 +36,10 @@ public void draw()
   	for(int nI=0; nI<asteroids.size(); nI++)
   	{
   		asteroids.get(nI).show();
-  		//if(dist(asteroids.getX(), asteroids.getY(), ship.getX(), ship.getY()) <20)
-  		asteroids.get(nI).move();
+  		if(dist(asteroids.get(nI).getX(), asteroids.get(nI).getY(), ship.getX(), ship.getY()) <20)
+  			asteroids.remove(nI);
+  		else
+  			asteroids.get(nI).move();
   	}
 }
 public void keyPressed()
