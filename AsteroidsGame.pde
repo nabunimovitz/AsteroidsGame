@@ -4,6 +4,8 @@ Stars [] stars;
 //Asteroid [] asteroids;
 ArrayList <Asteroid> asteroids;
 
+//Bullet test = new Bullet(ship);
+ArrayList <Bullet> bullets;
 
 public void setup() 
 {
@@ -14,12 +16,18 @@ public void setup()
  		stars[i] = new Stars();
  	}
 
- 	//asteroids = new Asteroid[8];
  	asteroids = new ArrayList<Asteroid>();
  	for(int nI=0; nI<8; nI++)
  	{
  		Asteroid asteroidOne = new Asteroid();
  		asteroids.add(asteroidOne);
+ 	}
+
+ 	bullets = new ArrayList<Bullet>(); //on step 6
+ 	for(int i=0; i<100; i++)
+ 	{
+ 		Bullet bulletOne = new Bullet(ship);
+ 		bullets.add(bulletOne);
  	}
 }
 public void draw() 
@@ -27,6 +35,9 @@ public void draw()
   	background(0);
   	ship.show();
   	ship.move();
+
+  	//test.show();
+  	//test.move();
   	
   	for(int i=0; i<stars.length; i++)
   	{
@@ -65,6 +76,7 @@ public void keyPressed()
 		ship.setY((int)(Math.random()*500));
 		ship.setPointDirection((int)(Math.random()*360));
 	} 
+a
 }
 public void keyReleased()
 {
