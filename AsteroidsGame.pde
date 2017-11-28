@@ -23,12 +23,7 @@ public void setup()
  		asteroids.add(asteroidOne);
  	}
 
- 	bullets = new ArrayList<Bullet>(); //on step 6
- 	for(int i=0; i<100; i++)
- 	{
- 		//Bullet bulletOne = new Bullet(ship);
- 		//bullets.add(bulletOne);
- 	}
+ 	bullets = new ArrayList<Bullet>();
 }
 public void draw() 
 { 
@@ -58,17 +53,6 @@ public void draw()
   		bullets.get(i).show();
 		bullets.get(i).move();
   	}
-
-  	/*for(int i=0; i<bullets.size(); i++)
-  	{
-  		if(dist(bullets.get(i).getX(), bullets.get(i).getY(), asteroids.getX(), asteroids.getY())<5)
-  			bullets.remove(i);
-  			asteroids.remove(nI);
-  		else 
-  		{
-
-  		}
-  	}*/
 
 }
 public void keyPressed()

@@ -26,4 +26,5 @@ class Bullet extends Floater
 		fill(myColor);
   		ellipse((float)myCenterX, (float)myCenterY, 5,5);
 	}
+
 } 
