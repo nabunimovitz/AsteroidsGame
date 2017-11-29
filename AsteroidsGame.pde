@@ -1,16 +1,13 @@
 //your variable declarations here
 Spaceship ship = new Spaceship();
 Stars [] stars;
-//Asteroid [] asteroids;
 ArrayList <Asteroid> asteroids;
-
-//Bullet test = new Bullet(ship);
 ArrayList <Bullet> bullets;
 
 public void setup() 
 {
  	size(500,500);
- 	stars = new Stars[100];
+ 	stars = new Stars[200];
  	for(int i=0; i<stars.length; i++)
  	{
  		stars[i] = new Stars();
@@ -30,9 +27,6 @@ public void draw()
   	background(0);
   	ship.show();
   	ship.move();
-
-  	//test.show();
-  	//test.move();
   	
   	for(int i=0; i<stars.length; i++)
   	{
@@ -42,9 +36,9 @@ public void draw()
   	for(int nI=0; nI<asteroids.size(); nI++)
   	{
   		asteroids.get(nI).show();
-  		if(dist(asteroids.get(nI).getX(), asteroids.get(nI).getY(), ship.getX(), ship.getY()) <20)
+  		/*if(dist(asteroids.get(nI).getX(), asteroids.get(nI).getY(), ship.getX(), ship.getY()) <20)
   			asteroids.remove(nI);
-  		else
+  		else*/
   			asteroids.get(nI).move();
   	}
 
@@ -52,9 +46,18 @@ public void draw()
   	{
   		bullets.get(i).show();
 		bullets.get(i).move();
+
+		for(int n=0; n<asteroids.size(); n++)
+			if(dist(bullets.get(i).getX(), bullets.get(i).getY(), asteroids.get(n).getX(), asteroids.get(n).getY())<7)
+			{
+				asteroids.remove(n);
+				bullets.remove(i);
+				break;
+			}
   	}
 
 }
+
 public void keyPressed()
 {
 	if(key == 'a') //turn left
