@@ -4,6 +4,9 @@ Stars [] stars;
 ArrayList <Asteroid> asteroids;
 ArrayList <Bullet> bullets;
 
+ArrayList <Lives> points;
+//Lives test = new Lives(50,50);
+
 public void setup() 
 {
  	size(500,500);
@@ -21,6 +24,17 @@ public void setup()
  	}
 
  	bullets = new ArrayList<Bullet>();
+
+ 	points = new ArrayList<Lives>();
+ 	Lives pointOne= new Lives(25,25);
+ 	points.add(pointOne);
+
+ 	Lives pointTwo = new Lives(50,25);
+ 	points.add(pointTwo);
+
+ 	Lives pointThree = new Lives(75,25);
+ 	points.add(pointThree);
+
 }
 public void draw() 
 { 
@@ -28,6 +42,8 @@ public void draw()
   	ship.show();
   	ship.move();
   	
+  	//test.show();
+
   	for(int i=0; i<stars.length; i++)
   	{
   		stars[i].show();
@@ -56,6 +72,10 @@ public void draw()
 			}
   	}
 
+  	for(int i=0; i<points.size(); i++)
+  	{
+  		points.get(i).show();
+  	}
 }
 
 public void keyPressed()

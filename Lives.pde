@@ -8,7 +8,8 @@ class Lives
 	}
 	public void show()
 	{
-		fill(255,0,0);
-		ellipse((float)myX, (float)myY,50,50); 
+		noStroke();
+		fill(0,255,0);
+		ellipse((float)myX, (float)myY,20,20); 
 	}
 }
