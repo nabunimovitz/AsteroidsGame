@@ -52,9 +52,13 @@ public void draw()
   	for(int nI=0; nI<asteroids.size(); nI++)
   	{
   		asteroids.get(nI).show();
-  		/*if(dist(asteroids.get(nI).getX(), asteroids.get(nI).getY(), ship.getX(), ship.getY()) <20)
-  			asteroids.remove(nI);
-  		else*/
+  		if(dist(asteroids.get(nI).getX(), asteroids.get(nI).getY(), ship.getX(), ship.getY()) <20)
+  			{
+  				asteroids.remove(nI);
+  				if(!(points.size() == 0))
+  					points.remove(0);
+  			}
+  		else
   			asteroids.get(nI).move();
   	}
 
@@ -75,6 +79,14 @@ public void draw()
   	for(int i=0; i<points.size(); i++)
   	{
   		points.get(i).show();
+  	}
+
+  	if(points.size()==0)
+  	{
+  		//ellipse(250,250,250,250);
+  		fill(0);
+  		stroke(255,0,0);
+  		rect(125,125,250,250);
   	}
 }
 

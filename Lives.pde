@@ -9,7 +9,7 @@ class Lives
 	public void show()
 	{
 		noStroke();
-		fill(0,255,0);
+		fill(255,0,0);
 		ellipse((float)myX, (float)myY,20,20); 
 	}
 }
