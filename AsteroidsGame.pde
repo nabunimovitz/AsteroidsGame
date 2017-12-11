@@ -1,11 +1,11 @@
-//your variable declarations here
+//Make it so if all asteroids are gone, you win
+
 Spaceship ship = new Spaceship();
 Stars [] stars;
 ArrayList <Asteroid> asteroids;
 ArrayList <Bullet> bullets;
 
 ArrayList <Lives> points;
-//Lives test = new Lives(50,50);
 
 public void setup() 
 {
@@ -41,8 +41,6 @@ public void draw()
   	background(0);
   	ship.show();
   	ship.move();
-  	
-  	//test.show();
 
   	for(int i=0; i<stars.length; i++)
   	{
@@ -83,11 +81,17 @@ public void draw()
 
   	if(points.size()==0)
   	{
-  		//ellipse(250,250,250,250);
   		fill(0);
   		stroke(255,0,0);
   		rect(125,125,250,250);
+  		fill(255,0,0);
+  		textSize(50);
+  		text("You Lost", 150, 250);
+  		textSize(15);
+  		text("Refresh Page To Try Again",160,270);
   	}
+
+  	
 }
 
 public void keyPressed()
