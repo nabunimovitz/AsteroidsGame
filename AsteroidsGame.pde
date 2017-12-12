@@ -1,5 +1,3 @@
-//Make it so if all asteroids are gone, you win
-
 Spaceship ship = new Spaceship();
 Stars [] stars;
 ArrayList <Asteroid> asteroids;
@@ -86,12 +84,22 @@ public void draw()
   		rect(125,125,250,250);
   		fill(255,0,0);
   		textSize(50);
-  		text("You Lost", 150, 250);
+  		text("You Lose", 140, 250);
   		textSize(15);
-  		text("Refresh Page To Try Again",160,270);
+  		text("Refresh Page To Try Again",155,270);
   	}
 
-  	
+  	if(asteroids.size()==0)
+  	{
+  		fill(0);
+  		stroke(0,255,0);
+  		rect(125,125,250,250);
+  		fill(0,255,0);
+  		textSize(50);
+  		text("You Win", 150, 250);
+  		textSize(15);
+  		text("Refresh Page To Try Again",155,270);
+  	}
 }
 
 public void keyPressed()
