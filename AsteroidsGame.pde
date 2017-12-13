@@ -87,6 +87,11 @@ public void draw()
   		text("You Lose", 140, 250);
   		textSize(15);
   		text("Refresh Page To Try Again",155,270);
+
+  		if(asteroids.size()==1)
+  			text(asteroids.size()+ " Asteroid Left", 210,190);
+  		else
+  			text(asteroids.size()+ " Asteroids Left", 200,190);
   	}
 
   	if(asteroids.size()==0)
@@ -99,6 +104,10 @@ public void draw()
   		text("You Win", 150, 250);
   		textSize(15);
   		text("Refresh Page To Try Again",155,270);
+  		if(points.size()==1)
+  			text(points.size()+ " Life Left", 210, 190);
+  		else
+  			text(points.size() + " Lives Left", 200, 190);
   	}
 }
 
